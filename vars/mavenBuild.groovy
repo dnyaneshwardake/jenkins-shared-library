@@ -1,17 +1,18 @@
 def call(){
   pipeline {
-    any
-    tools {
-        maven "MAVEN_HOME"
-    }
-    stages { 
+    agent any
+    stages {
         stage('Build') { 
             steps {
                 sh 'mvn -B -DskipTests clean install' 
             }
         }
+        
+        stage('Deliver') {
+            steps {
+                sh 'echo Success!'
+            }
+        }
     }
-    
-    
-  }
+}
 }
