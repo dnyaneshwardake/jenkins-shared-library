@@ -5,12 +5,18 @@ def call(){
       maven 'MAVEN_HOME' 
   }
     stages {
-        stage('Build') { 
+        stage('Maven-Build') { 
             steps {
                 sh 'mvn -B -DskipTests clean install'
             }
         }
-       
+    }
+    stages {
+        stage('Docker-Build') { 
+            steps {
+                dockerBuild()
+            }
+        }
     }
 }
 }
