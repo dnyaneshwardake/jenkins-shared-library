@@ -18,9 +18,9 @@ def call(){
         }
       stage('Docker-Build') { 
             steps{
-              
-                sh  'docker.build registry + ":$BUILD_NUMBER"'
-                
+              script {
+                  sh 'docker.build registry + ":$BUILD_NUMBER"'
+                }
             }
         }
       
