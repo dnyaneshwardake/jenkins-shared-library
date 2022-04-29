@@ -1,6 +1,12 @@
 def call(){
   pipeline {
+    environment {
+      registry = "awsadmindakets/dakets"
+      registryCredential = 'dockerhub'
+    }
+    
     agent any
+    
     tools {
       maven 'MAVEN_HOME' 
   }
@@ -11,8 +17,10 @@ def call(){
             }
         }
       stage('Docker-Build') { 
-            steps {
-                dockerBuild()
+            steps{
+              script {
+                  docker.build registry + ":$BUILD_NUMBER"
+                }
             }
         }
       
