@@ -10,13 +10,12 @@ def call(){
                 sh 'mvn -B -DskipTests clean install'
             }
         }
-    }
-    stages {
-        stage('Docker-Build') { 
+      stage('Docker-Build') { 
             steps {
                 dockerBuild()
             }
         }
+      
     }
-}
+  }
 }
