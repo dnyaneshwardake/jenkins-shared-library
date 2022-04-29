@@ -1,9 +1,9 @@
 def call(){
   pipeline {
     agent any
-    tools{
-      "MAVEN_HOME"
-    }
+    tools {
+      maven 'MAVEN_HOME' 
+  }
     stages {
         stage('Build') { 
             steps {
