@@ -1,7 +1,7 @@
 def call(){
   pipeline {
     environment {
-      registry = "awsadmindakets/dakets"
+      registry = 'dockerserver'
       registryCredential = 'dockerhub'
       dockerImage=''
     }
