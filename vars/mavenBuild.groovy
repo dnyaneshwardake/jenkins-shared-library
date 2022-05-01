@@ -1,7 +1,7 @@
 def call(){
   pipeline {
     environment {
-      registry = 'dockerserver'
+      registry = 'https://index.docker.io/v2/'
       registryCredential = 'dockerhub'
       dockerImage=''
     }
