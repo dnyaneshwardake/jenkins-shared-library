@@ -6,7 +6,7 @@ def call(){
       dockerImage="code-with-quarkus"
     }
     
-    agent any
+    agent {dockerfile true}
     
     tools {
       maven 'MAVEN_HOME'
