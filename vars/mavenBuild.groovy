@@ -10,7 +10,7 @@ def call(){
     
     tools {
       maven 'MAVEN_HOME'
-      dockerTool 'DOCKER_ROOT'
+      docker 'DOCKER_ROOT'
   }
     stages {
         stage('Maven-Build') { 
