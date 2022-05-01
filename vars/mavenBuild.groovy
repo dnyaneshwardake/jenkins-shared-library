@@ -32,11 +32,7 @@ def call(){
                 }
             }
         }
-        stag('Cleanup'){
-          steps{
-            sh 'docker rmi $registry:$BUILD_NUMBER"'
-          }
-        }
+      }
       
     }
   }
