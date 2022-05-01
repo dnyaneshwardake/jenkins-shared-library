@@ -3,7 +3,7 @@ def call(){
     environment {
       registry = "https://index.docker.io/v2/"
       registryCredential = 'dockerhub'
-      dockerImage=''
+      dockerImage="code-with-quarkus"
     }
     
     agent any
