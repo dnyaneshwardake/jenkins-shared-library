@@ -1,7 +1,7 @@
 def call(){
   pipeline {
     environment {
-      registry = "https://index.docker.io/v2/"
+      registry = "awsadmindakets/dakets"
       registryCredential = 'dockerhub'
       dockerImage="code-with-quarkus"
     }
@@ -28,7 +28,7 @@ def call(){
       stage('Docker-Push') { 
             steps{
               script {
-                  docker.withRegistry( registry , registryCredential ) {
+                  docker.withRegistry( '' , registryCredential ) {
                   dockerImage.push()
                 }
             }
