@@ -9,8 +9,8 @@ def call(){
     agent any
     
     tools {
-      maven 'MAVEN_HOME',
-      docker 'docker'
+      maven 'MAVEN_HOME'
+      docker 'DOCKER_ROOT'
   }
     stages {
         stage('Maven-Build') { 
