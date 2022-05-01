@@ -28,7 +28,7 @@ def call(){
       stage('Docker-Push') { 
             steps{
               script {
-                  docker.withRegistry( '' , registryCredential ) {
+                  docker.withRegistry( dockerImage , registryCredential ) {
                   dockerImage.push()
                 }
             }
