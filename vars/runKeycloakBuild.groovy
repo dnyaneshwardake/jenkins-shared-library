@@ -16,7 +16,8 @@ def call(){
         stage('Maven-Build') { 
             steps {
                 //sh 'mvn -B -DskipTests clean install'
-                sh 'mvn clean install -DskipTests'
+                //sh 'mvn clean install -DskipTests'
+                sh 'mvn -Pdistribution -pl distribution/server-dist -am -Dmaven.test.skip clean install'
             }
         }
       stage('Docker-Build') { 
