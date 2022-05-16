@@ -17,7 +17,7 @@ def call(){
             steps {
                 //sh 'mvn -B -DskipTests clean install'
                 //sh 'mvn clean install -DskipTests'
-                sh 'mvn -Pdistribution -pl distribution/server-dist -am -Dmaven.test.skip clean install'
+                sh 'mvn -Pdistribution -pl distribution/server-dist -am -DskipTestsuite -DskipExamples -DskipTests clean install'
             }
         }
       stage('Build-Quarkus-Dist') { 
