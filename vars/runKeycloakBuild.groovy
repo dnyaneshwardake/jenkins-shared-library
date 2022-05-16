@@ -20,6 +20,14 @@ def call(){
                 sh 'mvn -Pdistribution -pl distribution/server-dist -am -Dmaven.test.skip clean install'
             }
         }
+      stage('Build-Quarkus-Dist') { 
+            steps {
+                //sh 'mvn -B -DskipTests clean install'
+                //sh 'mvn clean install -DskipTests'
+                sh 'cd quarkus'
+                sh 'mvn -f dist/pom.xml clean install'
+            }
+        }
       stage('Docker-Build') { 
             steps{
               script {
