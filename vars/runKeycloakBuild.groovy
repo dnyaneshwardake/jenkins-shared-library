@@ -17,7 +17,7 @@ def call(){
             steps {
                 //sh 'mvn -B -DskipTests clean install'
                 //sh 'mvn clean install -DskipTests'
-                sh 'mvn -f ../pom.xml clean install -DskipTestsuite -DskipExamples -DskipTests'
+                sh 'mvn -f ./pom.xml clean install -DskipTestsuite -DskipExamples -DskipTests'
             }
         }
       stage('Docker-Build') { 
